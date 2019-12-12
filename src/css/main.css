@@ -28,7 +28,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  border-radius: 10px; }
+  border-radius: 10px;
+  position: relative; }
   .container .dice-container {
     margin-bottom: 3.5rem; }
     .container .dice-container .dice-img,
@@ -108,6 +109,24 @@ body {
       margin-right: 0.3rem;
       line-height: 1;
       vertical-align: text-top; }
+  .container .tooltip {
+    width: 100px;
+    height: 50px;
+    background: rgba(159, 159, 159, 0.7);
+    border-radius: 10px;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #f35151;
+    visibility: hidden; }
+
+.show-tooltip {
+  visibility: visible !important; }
 
 .separate-dice {
   display: flex;

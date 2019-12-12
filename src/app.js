@@ -1,14 +1,15 @@
 (function() {
-  var diceTwo, sound, toolTip;
+  var diceTwo;
 
   init();
 
   function init() {
-    var diceDOM = document.querySelector(".dice-img");
+    // var diceDOM = document.querySelector(".dice-img");
     var dice2DOM = document.querySelector(".dice-img-2");
     dice2DOM.style.display = "none";
     document.querySelector(".btn-roll").addEventListener("click", handleRoll);
     useOneDice();
+    toolTip = false;
   }
 
   function handleRoll() {
@@ -20,16 +21,16 @@
 
     // get rand# btwn 1 - 6
     var dice = Math.floor(Math.random() * 6) + 1;
-
     // display dice with rand generated#
     diceDOM.style.display = "block";
     diceDOM.src = "./img/" + dice + ".png";
 
+    var tooltipDOM = document.querySelector(".tooltip");
     if (!diceTwo) {
-      if (dice === 6) prevRollSix = true;
-      else prevRollSix = false;
       // roll animation
       diceDOM.classList.add("roll");
+      // update tooltip
+      tooltipDOM.innerHTML = dice;
     }
     // Playing with 2 dices
     else {
@@ -46,6 +47,8 @@
       // roll animation
       diceDOM.classList.add("roll");
       dice2DOM.classList.add("roll");
+      // update tooltip
+      tooltipDOM.innerHTML = dice + dice2;
     }
   }
 
@@ -66,6 +69,19 @@
       // Back to one dice
       else {
         useOneDice();
+      }
+    });
+
+  // slider to display tooltip
+  document
+    .getElementById("checkbox-show-number")
+    .addEventListener("change", function() {
+      if (this.checked) {
+        toolTip = true;
+        document.querySelector(".tooltip").classList.add("show-tooltip");
+      } else {
+        toolTip = false;
+        document.querySelector(".tooltip").classList.remove("show-tooltip");
       }
     });
 
