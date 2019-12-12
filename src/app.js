@@ -1,6 +1,6 @@
 (function() {
   var diceTwo, sound;
-  var audio = new Audio("./sound/diceroll.mp3");
+  // var audio = new Audio("./sound/diceroll.mp3");
   init();
 
   // returns true when browsed by mobile device
@@ -53,6 +53,10 @@
     if (mobileCheck()) {
       document.querySelector(".tooltip-2").innerHTML = "tap anywhere to roll!";
     }
+
+    // while(true){
+    //   audio.play();
+    // }
   }
 
   function handleRoll() {
@@ -95,8 +99,11 @@
     }
     // play dice roll
     if (sound) {
-      if (audio.paused) audio.play();
-      else audio.currentTime = 0;
+      var audioPlay = document.getElementById("dice-roll-sound");
+      if (audioPlay.paused) audioPlay.play();
+      else audioPlay.currentTime = 0;
+      // if (audio.paused) audio.play();
+      // else audio.currentTime = 0;
     }
   }
 
