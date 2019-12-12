@@ -59,13 +59,13 @@
       "ended",
       function() {
         this.currentTime = 0;
-        this.volume = 0;
         this.play();
+        audio.muted = true;
       },
       false
     );
-    audio.volume = 0;
     audio.play();
+    audio.muted = true;
   }
 
   function handleRoll() {
@@ -108,11 +108,10 @@
     }
     // play dice roll
     if (sound) {
+      audio.muted = false;
+      audio.currentTime = 0;
       // if (audio.paused) audio.play();
       // else audio.currentTime = 0;
-      // change volume instead of reloading audio to remove delay on mobile
-      audio.currentTime = 0;
-      audio.volume = 1;
     }
   }
 
