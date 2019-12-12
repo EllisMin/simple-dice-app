@@ -97,10 +97,8 @@
     }
     // play dice roll
     if (sound) {
-      audio.muted = false;
-      audio.currentTime = 0;
-      // if (audio.paused) audio.play();
-      // else audio.currentTime = 0;
+      if (audio.paused) audio.play();
+      else audio.currentTime = 0;
     }
   }
 
