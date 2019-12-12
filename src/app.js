@@ -4,15 +4,15 @@
   init();
 
   function init() {
-    // if ("addEventListener" in document) {
-    //   document.addEventListener(
-    //     "DOMContentLoaded",
-    //     function() {
-    //       FastClick.attach(document.body);
-    //     },
-    //     false
-    //   );
-    // }
+    if ("addEventListener" in document) {
+      document.addEventListener(
+        "DOMContentLoaded",
+        function() {
+          FastClick.attach(document.body);
+        },
+        false
+      );
+    }
     // var diceDOM = document.querySelector(".dice-img");
     var dice2DOM = document.querySelector(".dice-img-2");
     dice2DOM.style.display = "none";
