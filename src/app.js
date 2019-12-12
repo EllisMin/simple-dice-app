@@ -91,6 +91,8 @@
       else {
         useOneDice();
       }
+      // Removes focus
+      document.getElementById("checkbox-two-dice").blur();
     });
 
   // slider to display tooltip
@@ -104,6 +106,7 @@
         toolTip = false;
         document.querySelector(".tooltip").classList.remove("show-tooltip");
       }
+      document.getElementById("checkbox-show-number").blur();
     });
 
   // slider to turn on sound
@@ -115,6 +118,7 @@
       } else {
         sound = false;
       }
+      document.getElementById("checkbox-sound").blur();
     });
 
   function useOneDice() {
