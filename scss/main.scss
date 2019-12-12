@@ -23,6 +23,15 @@ div {
   -moz-user-select: none; // firefox
   -ms-user-select: none; // internet explorer
   user-select: none; // maybe future
+  -khtml-user-select: none;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; // chrome & safari
+  -moz-user-select: none; // firefox
+  -ms-user-select: none; // internet explorer
+  user-select: none; // maybe future
+  -khtml-user-select: none;
 }
 
 html {
