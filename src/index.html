@@ -21,42 +21,44 @@
   </head>
   <body>
     <div class="container">
+      <div class="tooltip-2">tap anywhere to roll!</div>
       <div class="tooltip"></div>
       <div class="dice-container">
         <img class="dice-img" src="./img/7.png" alt="diceimg" />
         <img class="dice-img-2" src="./img/7.png" alt="diceimg2" />
       </div>
-
-      <!-- Switch: two dices -->
-      <div class="switch-container">
-        <label class="dice-label">Two Dices</label>
-        <label class="switch">
-          <input type="checkbox" id="checkbox-two-dice" name="use-two-dice" />
-          <span class="slider"></span>
-        </label>
-      </div>
-      <!-- Switch: show number -->
-      <div class="switch-container">
-        <label class="dice-label">Show #</label>
-        <label class="switch">
-          <input
-            type="checkbox"
-            id="checkbox-show-number"
-            name="show-number"
-          />
-          <span class="slider"></span>
-        </label>
-      </div>
-      <!-- Switch: Sound -->
-      <div class="switch-container">
-        <label class="dice-label">Sound</label>
-        <label class="switch">
-          <input type="checkbox" id="checkbox-sound" name="use-sound" />
-          <span class="slider"></span>
-        </label>
+      <div class="option-container">
+        <!-- Switch: two dices -->
+        <div class="switch-container">
+          <label class="dice-label">Two Dices</label>
+          <label class="switch">
+            <input type="checkbox" id="checkbox-two-dice" name="use-two-dice" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <!-- Switch: show number -->
+        <div class="switch-container">
+          <label class="dice-label">Show #</label>
+          <label class="switch">
+            <input
+              type="checkbox"
+              id="checkbox-show-number"
+              name="show-number"
+            />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <!-- Switch: Sound -->
+        <div class="switch-container">
+          <label class="dice-label">Sound</label>
+          <label class="switch">
+            <input type="checkbox" id="checkbox-sound" name="use-sound" />
+            <span class="slider"></span>
+          </label>
+        </div>
       </div>
       <!-- Roll Btn -->
-      <button class="btn-roll"><i class="fas fa-dice fa-xs"></i>Roll</button>
+      <!-- <button class="btn-roll"><i class="fas fa-dice fa-xs"></i>Roll</button> -->
     </div>
 
     <script src="./app.js"></script>

@@ -7,7 +7,13 @@
     // var diceDOM = document.querySelector(".dice-img");
     var dice2DOM = document.querySelector(".dice-img-2");
     dice2DOM.style.display = "none";
-    document.querySelector(".btn-roll").addEventListener("click", handleRoll);
+    document.querySelector("body").addEventListener("click", handleRoll);
+    // Don't roll when clicking option container
+    document
+      .querySelector(".option-container")
+      .addEventListener("click", function(e) {
+        e.stopPropagation();
+      });
     useOneDice();
     sound = false;
   }
@@ -70,6 +76,10 @@
         document
           .querySelector(".dice-container")
           .classList.add("separate-dice");
+
+        document
+          .querySelector(".option-container")
+          .classList.add("move-option-container");
       }
       // Back to one dice
       else {
@@ -105,5 +115,8 @@
     document.querySelector(".dice-img-2").style.display = "none";
     diceTwo = false;
     document.querySelector(".dice-container").classList.remove("separate-dice");
+    document
+      .querySelector(".option-container")
+      .classList.remove("move-option-container");
   }
 })();
