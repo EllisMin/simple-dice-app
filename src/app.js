@@ -1,6 +1,6 @@
 (function() {
   var diceTwo, sound;
-  var audio = new Audio("./sound/diceroll.mp3");
+  var audio;
   init();
 
   // returns true when browsed by mobile device
@@ -54,18 +54,7 @@
       document.querySelector(".tooltip-2").innerHTML = "tap anywhere to roll!";
     }
 
-    // play audio endlessly
-    audio.addEventListener(
-      "ended",
-      function() {
-        this.currentTime = 0;
-        this.play();
-        audio.muted = true;
-      },
-      false
-    );
-    audio.play();
-    audio.muted = true;
+    audio = new Audio("./sound/diceroll.mp3");
   }
 
   function handleRoll() {
