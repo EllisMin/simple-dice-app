@@ -149,6 +149,7 @@ body {
     border-radius: 10px;
     z-index: 1;
     text-align: center;
+    transform: translateX(18px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,7 +157,8 @@ body {
     font-size: 3rem;
     font-weight: 600;
     color: #f35151;
-    visibility: hidden; }
+    visibility: hidden;
+    margin-bottom: 0.3rem; }
 
 .show-tooltip {
   visibility: visible !important; }
