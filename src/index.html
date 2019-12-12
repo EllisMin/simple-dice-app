@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Simple Dice | Ellis Min</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Local css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/939d583296.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="dice-container">
+        <img class="dice-img" src="./img/7.png" alt="diceimg" />
+        <img class="dice-img-2" src="./img/7.png" alt="diceimg2" />
+      </div>
+
+      <!-- Switch: two dices -->
+      <div class="switch-container">
+        <label class="dice-label">Two Dices</label>
+        <label class="switch">
+          <input type="checkbox" id="checkbox-two-dice" name="use-two-dice" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <!-- Switch: show number -->
+      <div class="switch-container">
+        <label class="dice-label">Show #</label>
+        <label class="switch">
+          <input
+            type="checkbox"
+            id="checkbox-two-dice"
+            name="use-show-number"
+          />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <!-- Switch: Sound -->
+      <div class="switch-container">
+        <label class="dice-label">Sound</label>
+        <label class="switch">
+          <input type="checkbox" id="checkbox-sound" name="use-two-dice" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <!-- Roll Btn -->
+      <button class="btn-roll"><i class="fas fa-dice fa-xs"></i>Roll</button>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
