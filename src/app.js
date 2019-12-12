@@ -1,6 +1,8 @@
 (function() {
   var diceTwo, sound;
   var audio = new Audio("./sound/diceroll.mp3");
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  const audioCtx = new AudioContext();
   init();
 
   function init() {

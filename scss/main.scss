@@ -16,10 +16,13 @@ $website-width: 1100px;
   display: none;
 }
 img,
-label {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+label,
+div {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; // chrome & safari
+  -moz-user-select: none; // firefox
+  -ms-user-select: none; // internet explorer
+  user-select: none; // maybe future
 }
 
 html {
