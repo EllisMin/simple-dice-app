@@ -42,7 +42,7 @@
       // roll animation
       diceDOM.classList.add("roll");
       // update tooltip
-      tooltipDOM.innerHTML = dice;
+      tooltipDOM.innerHTML = dice + "!";
     }
     // Playing with 2 dices
     else {
@@ -60,7 +60,7 @@
       diceDOM.classList.add("roll");
       dice2DOM.classList.add("roll");
       // update tooltip
-      tooltipDOM.innerHTML = dice + dice2;
+      tooltipDOM.innerHTML = dice + dice2 + "!";
     }
     // play dice roll
     if (sound) {
