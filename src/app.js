@@ -1,6 +1,6 @@
 (function() {
-  var diceTwo;
-
+  var diceTwo, sound;
+  var audio = new Audio("./sound/diceroll.mp3");
   init();
 
   function init() {
@@ -9,7 +9,7 @@
     dice2DOM.style.display = "none";
     document.querySelector(".btn-roll").addEventListener("click", handleRoll);
     useOneDice();
-    toolTip = false;
+    sound = false;
   }
 
   function handleRoll() {
@@ -50,6 +50,11 @@
       // update tooltip
       tooltipDOM.innerHTML = dice + dice2;
     }
+    // play dice roll
+    if (sound) {
+      if (audio.paused) audio.play();
+      else audio.currentTime = 0;
+    }
   }
 
   // slider to use 2 dices
@@ -82,6 +87,17 @@
       } else {
         toolTip = false;
         document.querySelector(".tooltip").classList.remove("show-tooltip");
+      }
+    });
+
+  // slider to turn on sound
+  document
+    .getElementById("checkbox-sound")
+    .addEventListener("change", function() {
+      if (this.checked) {
+        sound = true;
+      } else {
+        sound = false;
       }
     });
 
