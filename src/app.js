@@ -16,6 +16,12 @@
       });
     useOneDice();
     sound = false;
+    // Roll on pressing spacebar
+    document.addEventListener("keyup", function(e) {
+      if (e.keyCode === 32 || e.which === 32) {
+        handleRoll();
+      }
+    });
   }
 
   function handleRoll() {

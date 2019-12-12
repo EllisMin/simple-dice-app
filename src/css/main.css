@@ -8,7 +8,9 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   height: 100vh;
-  display: flex; }
+  display: flex;
+  position: relative;
+  z-index: 2; }
   body:before {
     content: "";
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/bg.jpg") center center/cover;
@@ -48,7 +50,8 @@ body {
     color: #f35151;
     opacity: 1;
     animation: hideTooltip 5s forwards ease-in;
-    text-align: center; }
+    text-align: center;
+    z-index: 4; }
   .container .dice-container {
     margin-bottom: 3.5rem; }
     .container .dice-container .dice-img,
@@ -178,4 +181,5 @@ body {
 
 @keyframes hideTooltip {
   to {
-    opacity: 0; } }
+    opacity: 0;
+    visibility: hidden; } }
