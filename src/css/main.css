@@ -4,6 +4,12 @@
 ::-moz-selection {
   display: none; }
 
+img,
+label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
 html {
   -ms-touch-action: manipulation;
   touch-action: manipulation; }
