@@ -26,12 +26,12 @@ body {
   // overlay
   &:before {
     content: "";
-    background: linear-gradient($overlay-darken, $overlay-darken),
-      url("../img/bg.jpg") center center/cover;
-    // Get rand background img
     // background: linear-gradient($overlay-darken, $overlay-darken),
-    //   url("https://source.unsplash.com/1600x900/?nature,water") center
-    //     center/cover;
+    // url("../img/bg.jpg") center center/cover;
+    // Get rand background img
+    background: linear-gradient($overlay-darken, $overlay-darken),
+      url("https://source.unsplash.com/1600x900/?nature,water") center
+        center/cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -72,7 +72,7 @@ body {
     font-size: 2rem;
     color: $primary-color;
     opacity: 1;
-    animation: hideTooltip 5s forwards ease-in;
+    animation: hideTooltip 4s forwards ease-in;
     text-align: center;
     z-index: 4;
   }
@@ -148,8 +148,8 @@ body {
           position: absolute;
           height: 16px;
           width: 16px;
-          left: 0.2rem;
-          bottom: 0.16rem;
+          left: 2px;
+          bottom: 2px;
           background: #fff;
           transition: 0.4s;
           -webkit-transition: 0.4s;
