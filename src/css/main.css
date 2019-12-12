@@ -1,9 +1,14 @@
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
 body {
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.6);
   font-family: "Lato", sans-serif;
   font-weight: 300;
