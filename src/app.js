@@ -1,12 +1,13 @@
-(function() {
+(function () {
   var diceTwo, sound;
   var audio;
+
   init();
 
   // returns true when browsed by mobile device
   function mobileCheck() {
     var check = false;
-    (function(a) {
+    (function (a) {
       if (
         /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
           a
@@ -25,7 +26,7 @@
     if ("addEventListener" in document) {
       document.addEventListener(
         "DOMContentLoaded",
-        function() {
+        function () {
           FastClick.attach(document.body);
         },
         false
@@ -38,13 +39,13 @@
     // Don't roll when clicking option container
     document
       .querySelector(".option-container")
-      .addEventListener("click", function(e) {
+      .addEventListener("click", function (e) {
         e.stopPropagation();
       });
     useOneDice();
     sound = false;
     // Roll on pressing spacebar
-    document.addEventListener("keyup", function(e) {
+    document.addEventListener("keyup", function (e) {
       if (e.keyCode === 32 || e.which === 32) {
         handleRoll();
       }
@@ -57,6 +58,18 @@
     audio = new Audio("./sound/diceroll.mp3");
   }
 
+  function getRandomInt(min, max) {
+    // Create byte array and fill with 1 random number
+    var byteArray = new Uint8Array(1);
+    var cryptoObj = window.crypto || window.msCrypto;
+    cryptoObj.getRandomValues(byteArray);
+    var range = max - min + 1;
+    var max_range = 256;
+    if (byteArray[0] >= Math.floor(max_range / range) * range)
+      return getRandomInt(min, max);
+    return min + (byteArray[0] % range);
+  }
+
   function handleRoll() {
     var diceDOM = document.querySelector(".dice-img");
 
@@ -65,7 +78,9 @@
     void diceDOM.offsetWidth; // used to restart animation
 
     // get rand# btwn 1 - 6
-    var dice = Math.floor(Math.random() * 6) + 1;
+    var dice = getRandomInt(1, 6);
+    // var dice = Math.floor(Math.random() * 6) + 1;
+
     // display dice with rand generated#
     diceDOM.style.display = "block";
     diceDOM.src = "./img/" + dice + ".png";
@@ -83,7 +98,9 @@
       dice2DOM.classList.remove("roll");
       void dice2DOM.offsetWidth;
 
-      var dice2 = Math.floor(Math.random() * 6) + 1;
+      var dice2 = getRandomInt(1, 6);
+      // var dice2 = Math.floor(Math.random() * 6) + 1;
+
       dice2DOM.style.display = "block";
       dice2DOM.src = "./img/" + dice2 + ".png";
 
@@ -105,7 +122,7 @@
   // slider to use 2 dices
   document
     .getElementById("checkbox-two-dice")
-    .addEventListener("change", function() {
+    .addEventListener("change", function () {
       // Add a dice
       if (this.checked) {
         diceTwo = true;
@@ -131,7 +148,7 @@
   // slider to display tooltip
   document
     .getElementById("checkbox-show-number")
-    .addEventListener("change", function() {
+    .addEventListener("change", function () {
       if (this.checked) {
         toolTip = true;
         document.querySelector(".tooltip").classList.add("show-tooltip");
@@ -145,7 +162,7 @@
   // slider to turn on sound
   document
     .getElementById("checkbox-sound")
-    .addEventListener("change", function() {
+    .addEventListener("change", function () {
       if (this.checked) {
         sound = true;
       } else {
