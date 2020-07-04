@@ -86,6 +86,8 @@
     diceDOM.src = "./img/" + dice + ".png";
 
     var tooltipDOM = document.querySelector(".tooltip");
+    var tooltipDoubleDOM = document.querySelector(".tooltip-double");
+
     if (!diceTwo) {
       // roll animation
       diceDOM.classList.add("roll");
@@ -104,13 +106,24 @@
       dice2DOM.style.display = "block";
       dice2DOM.src = "./img/" + dice2 + ".png";
 
-      if (dice === 6 || dice2 === 6) prevRollSix = true;
-      else prevRollSix = false;
+      if (dice === 6 || dice2 === 6) {
+        prevRollSix = true;
+      } else {
+        prevRollSix = false;
+      }
+
       // roll animation
       diceDOM.classList.add("roll");
       dice2DOM.classList.add("roll");
+
       // update tooltip
       tooltipDOM.innerHTML = dice + dice2 + "!";
+
+      if (dice === dice2) {
+        tooltipDoubleDOM.style.visibility = "visible";
+      } else {
+        tooltipDoubleDOM.style.visibility = "hidden";
+      }
     }
     // play dice roll
     if (sound) {
