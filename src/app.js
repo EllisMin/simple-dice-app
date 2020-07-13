@@ -1,5 +1,5 @@
 (function () {
-  var diceTwo, sound;
+  var diceTwo, sound, showTooltip;
   var audio;
 
   init();
@@ -119,10 +119,12 @@
       // update tooltip
       tooltipDOM.innerHTML = dice + dice2 + "!";
 
-      if (dice === dice2) {
-        tooltipDoubleDOM.style.visibility = "visible";
-      } else {
-        tooltipDoubleDOM.style.visibility = "hidden";
+      if (showTooltip) {
+        if (dice === dice2) {
+          tooltipDoubleDOM.classList.add("show-tooltip");
+        } else {
+          tooltipDoubleDOM.classList.remove("show-tooltip");
+        }
       }
     }
     // play dice roll
@@ -153,6 +155,10 @@
       // Back to one dice
       else {
         useOneDice();
+        // Hide double message
+        document
+          .querySelector(".tooltip-double")
+          .classList.remove("show-tooltip");
       }
       // Removes focus
       document.getElementById("checkbox-two-dice").blur();
@@ -163,11 +169,15 @@
     .getElementById("checkbox-show-number")
     .addEventListener("change", function () {
       if (this.checked) {
-        toolTip = true;
+        showTooltip = true;
         document.querySelector(".tooltip").classList.add("show-tooltip");
+        document.querySelector(".tooltip-double").classList.add("show-tooltip");
       } else {
-        toolTip = false;
+        showTooltip = false;
         document.querySelector(".tooltip").classList.remove("show-tooltip");
+        document
+          .querySelector(".tooltip-double")
+          .classList.remove("show-tooltip");
       }
       document.getElementById("checkbox-show-number").blur();
     });
