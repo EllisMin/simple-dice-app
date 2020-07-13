@@ -120,6 +120,8 @@
       tooltipDOM.innerHTML = dice + dice2 + "!";
 
       if (showTooltip) {
+        console.log(dice);
+        console.log(dice2);
         if (dice === dice2) {
           tooltipDoubleDOM.classList.add("show-tooltip");
         } else {
@@ -171,7 +173,6 @@
       if (this.checked) {
         showTooltip = true;
         document.querySelector(".tooltip").classList.add("show-tooltip");
-        document.querySelector(".tooltip-double").classList.add("show-tooltip");
       } else {
         showTooltip = false;
         document.querySelector(".tooltip").classList.remove("show-tooltip");
