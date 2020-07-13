@@ -120,8 +120,6 @@
       tooltipDOM.innerHTML = dice + dice2 + "!";
 
       if (showTooltip) {
-        console.log(dice);
-        console.log(dice2);
         if (dice === dice2) {
           tooltipDoubleDOM.classList.add("show-tooltip");
         } else {
